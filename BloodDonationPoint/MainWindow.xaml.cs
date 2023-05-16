@@ -22,6 +22,8 @@ namespace BloodDonationPoint
         public MainWindow()
         {
             InitializeComponent();
+            Manager.MainFrame = MainFrame;
+            Manager.MainFrame.Navigate(new MainPage());
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -40,6 +42,23 @@ namespace BloodDonationPoint
         private void btnExit_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+        }
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                btnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnBack.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
         }
     }
 }
