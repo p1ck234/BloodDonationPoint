@@ -5,8 +5,88 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BloodDonationPoint"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Главное окно" Height="600" Width="1000" WindowStyle="None"
+        WindowStartupLocation="CenterScreen" Icon="Resource/icon.ico"
+        AllowsTransparency="true">
+    <Window.Background>
+        <SolidColorBrush Color="#FFFF0000"/>
+    </Window.Background>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Border BorderBrush ="Black" BorderThickness="3"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" MouseDown="Grid_MouseDown"
+              Background="Transparent">
+            <Border BorderBrush ="Black" BorderThickness="1" />
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Right">
+                <Image Name="btnMinus" 
+                       MouseDown="btnMinus_MouseDown" 
+                       Height="15" Width="15"
+                       Margin="5,5,5,5">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" 
+                                    Value="Resource/минус не актив.png"/>
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding="{Binding IsMouseOver, ElementName=btnMinus}" 
+                                    Value="True">
+                                    <Setter Property="Source" Value="Resource/минус актив.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="1"/>
+                    </Image.Effect>
+                </Image>
+                <Image Name="btnExit" 
+                       MouseDown="btnExit_MouseDown"
+                       Height="15" Width="15"
+                       Margin="5,5,20,5">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" 
+                                    Value="Resource/крест не актив.png"/>
+                            <Style.Triggers>
+                                <DataTrigger 
+                                    Binding="{Binding IsMouseOver, ElementName=btnExit}" 
+                                    Value="True">
+                                    <Setter Property="Source" 
+                                            Value="Resource/крест актив.png"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="1"/>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.RowSpan="2">
+            <Border BorderBrush ="Black" BorderThickness="1"/>
+        </Grid>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Image Source="Resource/Logo.png" Margin="5,0,0,0"/>
+            <TextBlock Text="Пункт сдачи крови" Width="175" Height="35" 
+                       Foreground="White" Margin="0,10,0,0"
+                       FontSize="18" FontWeight="Bold"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Frame Name="MainFrame" NavigationUIVisibility="Hidden"
+                   ContentRendered="MainFrame_ContentRendered">
+                
+            </Frame>
+        </Grid>
     </Grid>
 </Window>

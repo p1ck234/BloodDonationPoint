@@ -23,5 +23,23 @@ namespace BloodDonationPoint
         {
             InitializeComponent();
         }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void btnMinus_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void btnExit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
