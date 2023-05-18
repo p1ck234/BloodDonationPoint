@@ -60,5 +60,10 @@ namespace BloodDonationPoint
         {
             Manager.MainFrame.GoBack();
         }
+
+        private void btnDoctor_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new DoctorPage());
+        }
     }
 }

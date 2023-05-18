@@ -84,9 +84,12 @@
         </StackPanel>
         <Grid Grid.Row="1">
             <StackPanel>
+                <Button Name="btnDoctor" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Врачи"
+                        Click="btnDoctor_Click" Margin="0,30,0,0"/>
                 <Button x:Name="btnBack" Style="{StaticResource btn}" 
                         Height="35" Width="100" Content="Назад"
-                        FontSize="14" Click="btnBack_Click" Visibility="Hidden"/>
+                        FontSize="14" Click="btnBack_Click" Visibility="Visible" Margin="0,30,0,0"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">

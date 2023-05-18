@@ -1,0 +1,86 @@
+﻿<Page x:Class="BloodDonationPoint.DoctorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BloodDonationPoint"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DoctorPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnSelect" Style="{StaticResource btn}"
+                Width="100" Height="35" Margin="10" Content="Выбрать"
+                FontSize="14" Click="btnSelect_Click"/>
+                </StackPanel>
+        </WrapPanel>
+        <ListView Name="lvDoctor" Grid.Row="0"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  HorizontalContentAlignment="Center">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"
+                               HorizontalAlignment="Center"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="1" Width="200" Height="auto">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Height="100" Grid.Row="1"
+                               HorizontalAlignment="Center" Margin="5">
+                            <Image.Source>
+                                <Binding Path="MainImagePath">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>Resource/1.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                            <Image.ToolTip>
+                                <ToolTip Width="auto" MaxWidth="300">
+                                    <TextBlock TextWrapping="Wrap"
+                                               Text="{Binding ActualVacation}">
+                                    </TextBlock>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                        <TextBlock Text="{Binding Surname}" VerticalAlignment="Center" 
+                                   TextAlignment="Center"
+                                   Width="390" TextWrapping="Wrap" 
+                                   HorizontalAlignment="Center"
+                                   Margin="0,0,0,0" FontSize="18" Grid.Row="0"/>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" 
+                                   TextAlignment="Center"
+                                   Width="390" TextWrapping="Wrap" 
+                                   HorizontalAlignment="Center"
+                                   Margin="0,45,0,0" FontSize="18" Grid.Row="0"/>
+                        <TextBlock Text="{Binding Fatherhood}" VerticalAlignment="Center" 
+                                   TextAlignment="Center"
+                                   Width="390" TextWrapping="Wrap" 
+                                   HorizontalAlignment="Center"
+                                   Margin="0,85,0,0" FontSize="18" Grid.Row="0"/>
+                        <TextBlock Text="{Binding Stage,StringFormat={}Стаж {0} лет}" 
+                                   Grid.Row="2" Margin="5,5,5,15" 
+                                   HorizontalAlignment="Center"
+                                   FontSize="14" FontWeight="Light"/>
+                        <TextBlock Text="{Binding Number_of_patients, StringFormat={}{0}/}" Grid.Row="3" 
+                                   FontSize="14" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Maximum_number_of_patients}" Grid.Row="3" 
+                                   FontSize="14" HorizontalAlignment="Left" Margin="13,0,0,0"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

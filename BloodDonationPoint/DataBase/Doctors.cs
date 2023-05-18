@@ -30,6 +30,14 @@ namespace BloodDonationPoint.DataBase
         public int Maximum_number_of_patients { get; set; }
         public string MainImagePath { get; set; }
         public int ID_Manager { get; set; }
+
+        public string ActualVacation
+        {
+            get
+            {
+                return Vacation ? "В отпуске" : "Не в отпуске";
+            }
+        }
     
         public virtual Manager Manager { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
