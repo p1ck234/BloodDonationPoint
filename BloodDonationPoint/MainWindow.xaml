@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Главное окно" Height="600" Width="1000" WindowStyle="None"
         WindowStartupLocation="CenterScreen" Icon="Resource/icon.ico"
-        AllowsTransparency="true">
+        AllowsTransparency="true" ResizeMode="NoResize">
     <Window.Background>
         <SolidColorBrush Color="#FFFF0000"/>
     </Window.Background>
@@ -87,9 +87,15 @@
                 <Button Name="btnDoctor" Style="{StaticResource btn}"
                         Height="35" Width="100" Content="Врачи"
                         Click="btnDoctor_Click" Margin="0,30,0,0"/>
+                <Button Name="btnRecepient" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Доноры"
+                        Click="btnRecepient_Click" Margin="0,30,0,0"/>
+                <Button Name="btnBaseBlood" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="База крови"
+                        Click="btnBaseBlood_Click" Margin="0,30,0,0"/>
                 <Button x:Name="btnBack" Style="{StaticResource btn}" 
                         Height="35" Width="100" Content="Назад"
-                        FontSize="14" Click="btnBack_Click" Visibility="Visible" Margin="0,30,0,0"/>
+                        FontSize="14" Click="btnBack_Click" Visibility="Hidden" Margin="0,30,0,0"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">

@@ -30,13 +30,36 @@ namespace BloodDonationPoint
             lvDoctor.ItemsSource = AvtorizationWindow.bd.Doctors.Local;
         }
 
-        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            AddDoctor mw = new AddDoctor();
+            mw.Show();
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            AvtorizationWindow.bd.Doctors.Load();
             selectEntites = (Doctors)lvDoctor.SelectedItem;
             if (selectEntites != null)
             {
-                //BuyWindow bw = new BuyWindow();
-               // bw.Show();
+               if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        AvtorizationWindow.bd.Doctors.Remove(selectEntites);
+                        AvtorizationWindow.bd.SaveChanges();
+                        lvDoctor.ItemsSource = AvtorizationWindow.bd.Doctors.Local.OrderBy(x => x.ID);
+                        AvtorizationWindow.Inf("Элемент удален");
+                    }
+                    catch(Exception ex) 
+                    {
+                        AvtorizationWindow.Exp(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали");
             }
         }
     }

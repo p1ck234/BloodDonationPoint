@@ -15,10 +15,13 @@
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="btnSelect" Style="{StaticResource btn}"
-                Width="100" Height="35" Margin="10" Content="Выбрать"
-                FontSize="14" Click="btnSelect_Click"/>
-                </StackPanel>
+                <Button x:Name="btnAdd" Style="{StaticResource btn}"
+                Width="100" Height="35" Margin="10" Content="Добавить"
+                FontSize="14" Click="btnAdd_Click"/>
+                <Button x:Name="btnDel" Style="{StaticResource btn}"
+                Width="100" Height="35" Margin="10" Content="Удалить"
+                FontSize="14" Click="btnDel_Click"/>
+            </StackPanel>
         </WrapPanel>
         <ListView Name="lvDoctor" Grid.Row="0"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"

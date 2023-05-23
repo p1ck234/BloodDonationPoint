@@ -1,0 +1,65 @@
+﻿<Window x:Class="BloodDonationPoint.AddDoctor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodDonationPoint"
+        mc:Ignorable="d"
+        Title="Добавление врача" Height="450" Width="500" WindowStartupLocation="CenterOwner"
+        Icon="Resource/Icon.ico" >
+    <Window.Background>
+        <SolidColorBrush Color="#FFFF0000"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="Фамилия" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbSurname" Width="175" Height="35" PreviewTextInput="tbSurname_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="Имя" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbName" Width="175" Height="35" PreviewTextInput="tbName_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <TextBlock Text="Отчество" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbFatherhood" Width="175" Height="35" PreviewTextInput="tbFatherhood_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <TextBlock Text="Стаж" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbStage" Width="175" Height="35" PreviewTextInput ="tbStage_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4">
+            <TextBlock Text="Занятость" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbMax" Width="175" Height="35" PreviewTextInput="tbMax_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center">
+            <Button Name="btnAdd" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Добавить" Click="btnAdd_Click" Margin="10"/>
+            <Button Name="btnClose" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Закрыть" Click="btnClose_Click" Margin="10"/>
+        </StackPanel>
+    </Grid>
+    
+</Window>
