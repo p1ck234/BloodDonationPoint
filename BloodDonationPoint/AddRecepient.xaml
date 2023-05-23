@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BloodDonationPoint"
         mc:Ignorable="d"
-        Title="Добавление донора" Height="600" Width="500" ResizeMode="NoResize"
-        WindowStartupLocation="CenterOwner" Icon="Resource/Icon.ico">
+        Title="Добавление донора" Height="650" Width="500" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Icon="Resource/Icon.ico">
     <Window.Background>
         <SolidColorBrush Color="#FFFF0000"/>
     </Window.Background>
@@ -28,6 +28,7 @@
                        FontSize="18" FontWeight="Bold"/>
             <TextBox x:Name="tbSurname" Width="175" Height="35" PreviewTextInput="tbSurname_PreviewTextInput"
                  Style="{StaticResource TB}" />
+            <Image Source="resource/logo.png" Margin="140,0,0,0"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <TextBlock Text="Имя" Width="100" Height="35" 

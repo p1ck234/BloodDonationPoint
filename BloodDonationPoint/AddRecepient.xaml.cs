@@ -28,5 +28,45 @@ namespace BloodDonationPoint
         {
 
         }
+
+        private void tbSurname_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void tbFatherhood_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void TbPhoneNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void tbEmail_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void tbBloodType_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void tbRH_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
