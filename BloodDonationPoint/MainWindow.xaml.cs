@@ -68,7 +68,7 @@ namespace BloodDonationPoint
 
         private void btnRecepient_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new RecepientPage());
         }
 
         private void btnBaseBlood_Click(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BloodDonationPoint"
         mc:Ignorable="d"
-        Title="Главное окно" Height="600" Width="1000" WindowStyle="None"
+        Title="Главное окно" Height="600" Width="1300" WindowStyle="None"
         WindowStartupLocation="CenterScreen" Icon="Resource/icon.ico"
         AllowsTransparency="true" ResizeMode="NoResize">
     <Window.Background>
@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.RowSpan="2" Grid.ColumnSpan="2">
             <Border BorderBrush ="Black" BorderThickness="1"/>
@@ -85,17 +85,17 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <Button Name="btnDoctor" Style="{StaticResource btn}"
-                        Height="35" Width="100" Content="Врачи"
+                        Height="40" Width="150" FontSize="18" Content="Врачи"
                         Click="btnDoctor_Click" Margin="0,30,0,0"/>
                 <Button Name="btnRecepient" Style="{StaticResource btn}"
-                        Height="35" Width="100" Content="Доноры"
-                        Click="btnRecepient_Click" Margin="0,30,0,0"/>
+                        Height="40" Width="150" Content="Доноры"
+                        Click="btnRecepient_Click" FontSize="18" Margin="0,30,0,0"/>
                 <Button Name="btnBaseBlood" Style="{StaticResource btn}"
-                        Height="35" Width="100" Content="База крови"
-                        Click="btnBaseBlood_Click" Margin="0,30,0,0"/>
+                        Height="40" Width="150" Content="База крови"
+                        Click="btnBaseBlood_Click" FontSize="18" Margin="0,30,0,0"/>
                 <Button x:Name="btnBack" Style="{StaticResource btn}" 
-                        Height="35" Width="100" Content="Назад"
-                        FontSize="14" Click="btnBack_Click" Visibility="Hidden" Margin="0,30,0,0"/>
+                        Height="40" Width="150" FontSize="18" Content="Назад"
+                        Click="btnBack_Click" Visibility="Hidden" Margin="0,30,0,0"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">

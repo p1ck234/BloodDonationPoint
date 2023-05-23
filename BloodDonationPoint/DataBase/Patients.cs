@@ -41,5 +41,13 @@ namespace BloodDonationPoint.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BloodStorage> BloodStorage { get; set; }
         public virtual Doctors Doctors { get; set; }
+
+        public string ActualOblsedovania
+        {
+            get
+            {
+                return BloodType&& HepatitisBVirusAntigen&& HepatitisCVirusAntigen&& HepatitisCVirusAntibodies&& HIVAntigen&& HIVAntibodies&& Syphilis ? "Все" : "Не все";
+            }
+        }
     }
 }
