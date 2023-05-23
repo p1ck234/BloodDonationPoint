@@ -54,6 +54,9 @@
             <TextBox x:Name="tbMax" Width="175" Height="35" PreviewTextInput="tbMax_PreviewTextInput"
                  Style="{StaticResource TB}" />
         </StackPanel>
+        <Grid Grid.Row="5">
+            <Border BorderBrush ="Black" BorderThickness="1" />
+        </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center">
             <Button Name="btnAdd" Style="{StaticResource btn}"
                         Height="35" Width="100" Content="Добавить" Click="btnAdd_Click" Margin="10"/>
@@ -61,5 +64,4 @@
                         Height="35" Width="100" Content="Закрыть" Click="btnClose_Click" Margin="10"/>
         </StackPanel>
     </Grid>
-    
 </Window>

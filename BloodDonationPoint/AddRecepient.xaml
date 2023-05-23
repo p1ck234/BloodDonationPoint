@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BloodDonationPoint"
         mc:Ignorable="d"
-        Title="Добавление донора" Height="450" Width="800" ResizeMode="NoResize"
+        Title="Добавление донора" Height="600" Width="500" ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner" Icon="Resource/Icon.ico">
     <Window.Background>
         <SolidColorBrush Color="#FFFF0000"/>
@@ -17,9 +17,89 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="3.5*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="Фамилия" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbSurname" Width="175" Height="35" PreviewTextInput="tbSurname_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="Имя" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbName" Width="175" Height="35" PreviewTextInput="tbName_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <TextBlock Text="Отчество" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbFatherhood" Width="175" Height="35" PreviewTextInput="tbFatherhood_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <TextBlock Text="Телефон" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="TbPhoneNumber" Width="175" Height="35" PreviewTextInput="TbPhoneNumber_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4">
+            <TextBlock Text="Почта" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbEmail" Width="175" Height="35" PreviewTextInput="tbEmail_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="5">
+            <CheckBox Content="Тест на группу крови" 
+                      Foreground="White" Margin="5" IsChecked="True"/>
+            <CheckBox Content="Тест на поверхностный антигент вируса гепатит B" 
+                      Foreground="White" Margin="5" IsChecked="True"/>
+            <CheckBox Content="Тест на антиген вируса гепатита C" 
+                      Foreground="White" Margin="5" IsChecked="True"/>
+            <CheckBox Content="Тест на антитела вируса гепатита C" 
+                      Foreground="White" Margin="5" IsChecked="True"/>
+            <CheckBox Content="Тест на антиген ВИЧ" 
+                      Foreground="White" Margin="5" IsChecked="True"/>
+            <CheckBox Content="Тест на антитела ВИЧ" 
+                      Foreground="White" Margin="5" IsChecked="True"/>
+            <CheckBox Content="Тест на наличие возбудителя сифилиса" 
+                      Foreground="White" Margin="5" IsChecked="True"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="6">
+            <TextBlock Text="Доктор" Width="100" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbDoctor" Width="175" Height="35" PreviewTextInput="tbBloodType_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="7">
+            <TextBlock Text="Группа крови" Width="130" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbBloodType" Width="50" Height="35" PreviewTextInput="tbBloodType_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+            <TextBlock Text="Рузус" Width="50" Height="35" 
+                       Foreground="White" HorizontalAlignment="Left" Margin="10"
+                       FontSize="18" FontWeight="Bold"/>
+            <TextBox x:Name="tbRH" Width="50" Height="35" PreviewTextInput="tbRH_PreviewTextInput"
+                 Style="{StaticResource TB}" />
+        </StackPanel>
+        <Grid Grid.Row="8">
+            <Border BorderBrush ="Black" BorderThickness="1" />
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="8" HorizontalAlignment="Center">
+            <Button Name="btnAdd" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Добавить" Click="btnAdd_Click" Margin="10"/>
+            <Button Name="btnClose" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Закрыть" Click="btnClose_Click" Margin="10"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -23,5 +23,10 @@ namespace BloodDonationPoint
         {
             InitializeComponent();
         }
+
+        private void tbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
     }
 }
