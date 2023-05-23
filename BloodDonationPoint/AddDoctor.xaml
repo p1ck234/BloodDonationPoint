@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BloodDonationPoint"
         mc:Ignorable="d"
         Title="Добавление врача" Height="450" Width="500" WindowStartupLocation="CenterOwner"
-        Icon="Resource/Icon.ico" >
+        Icon="Resource/Icon.ico" ResizeMode="NoResize" >
     <Window.Background>
         <SolidColorBrush Color="#FFFF0000"/>
     </Window.Background>

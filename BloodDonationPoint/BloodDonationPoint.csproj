@@ -67,9 +67,16 @@
     <Compile Include="AddDoctor.xaml.cs">
       <DependentUpon>AddDoctor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddRecepient.xaml.cs">
+      <DependentUpon>AddRecepient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecepientPage.xaml.cs">
       <DependentUpon>RecepientPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddRecepient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AvtorizationWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

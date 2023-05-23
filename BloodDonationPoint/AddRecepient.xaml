@@ -1,0 +1,25 @@
+﻿<Window x:Class="BloodDonationPoint.AddRecepient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodDonationPoint"
+        mc:Ignorable="d"
+        Title="Добавление донора" Height="450" Width="800" ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner" Icon="Resource/Icon.ico">
+    <Window.Background>
+        <SolidColorBrush Color="#FFFF0000"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+    </Grid>
+</Window>

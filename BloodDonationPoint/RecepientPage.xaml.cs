@@ -32,7 +32,8 @@ namespace BloodDonationPoint
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            AddRecepient mw = new AddRecepient();
+            mw.Show();
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
