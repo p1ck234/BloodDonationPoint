@@ -26,6 +26,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <Button Name="btnSelect" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Взятие крови" Click="btnSelect_Click" Margin="10"/>
             <Button Name="btnAdd" Style="{StaticResource btn}"
                         Height="35" Width="100" Content="Добавить" Click="btnAdd_Click" Margin="10"/>
             <Button Name="btnDel" Style="{StaticResource btn}"

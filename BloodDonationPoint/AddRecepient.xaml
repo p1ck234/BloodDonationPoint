@@ -75,7 +75,7 @@
                       Foreground="White" Margin="5" IsChecked="True"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="6">
-            <TextBlock Text="Доктор" Width="100" Height="35" 
+            <TextBlock Text="ID Доктор" Width="100" Height="35" 
                        Foreground="White" HorizontalAlignment="Left" Margin="10"
                        FontSize="18" FontWeight="Bold"/>
             <TextBox x:Name="tbDoctor" Width="175" Height="35" PreviewTextInput="tbBloodType_PreviewTextInput"

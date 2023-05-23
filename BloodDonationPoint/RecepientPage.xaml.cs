@@ -62,5 +62,10 @@ namespace BloodDonationPoint
                 AvtorizationWindow.Exp("Вы ничего не выбрали!");
             }
         }
+
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
