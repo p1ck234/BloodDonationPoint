@@ -28,6 +28,8 @@
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
             <Button Name="btnAdd" Style="{StaticResource btn}"
                         Height="35" Width="100" Content="Добавить" Click="btnAdd_Click" Margin="10"/>
+            <Button Name="btnDel" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Удалить" Click="btnDel_Click" Margin="10"/>
         </StackPanel>
     </Grid>
 </Page>

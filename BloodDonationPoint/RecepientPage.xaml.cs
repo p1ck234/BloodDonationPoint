@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BloodDonationPoint.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -21,11 +22,44 @@ namespace BloodDonationPoint
     /// </summary>
     public partial class RecepientPage : Page
     {
+        public static Patients selectEntites = new Patients();
         public RecepientPage()
         {
             InitializeComponent();
             AvtorizationWindow.bd.Patients.Load();
             dtgRecepient.ItemsSource = AvtorizationWindow.bd.Patients.Local.OrderBy(x => x.ID);
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            AvtorizationWindow.bd.Patients.Load();
+            selectEntites = (Patients)dtgRecepient.SelectedItem;
+            if (selectEntites != null)
+            {
+                try
+                {
+                    if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?","Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        AvtorizationWindow.bd.Patients.Remove(selectEntites);
+                        AvtorizationWindow.bd.SaveChanges();
+                        dtgRecepient.ItemsSource = AvtorizationWindow.bd.Patients.OrderBy(x => x.ID);
+                        AvtorizationWindow.Inf("Информация сохранена!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    AvtorizationWindow.Exp(ex.Message);
+                }
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
+            }
         }
     }
 }
