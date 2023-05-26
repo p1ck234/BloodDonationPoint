@@ -32,11 +32,46 @@ namespace BloodDonationPoint
         {
             AvtorizationWindow.bd.Doctors.Load();
             Doctors current = new Doctors();
-            current.Surname = tbSurname.Text;
-            current.Name = tbName.Text;
-            current.Fatherhood = tbFatherhood.Text;
-            current.Stage = int.Parse(tbStage.Text);
-            current.Maximum_number_of_patients = int.Parse(tbMax.Text);
+            if (tbSurname.Text != "")
+            {
+                current.Surname = tbSurname.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали фамилию!");
+            }
+            if (tbName.Text != "")
+            {
+                current.Name = tbName.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали имя!");
+            }
+            if (tbFatherhood.Text != "")
+            {
+                current.Fatherhood = tbFatherhood.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали отчество!");
+            }
+            if (tbStage.Text != "")
+            {
+                current.Stage = int.Parse(tbStage.Text);
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали стаж!");
+            }
+            if (tbMax.Text != "")
+            {
+                current.Maximum_number_of_patients = int.Parse(tbMax.Text);
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали максимально кол-во пациентов!");
+            }
             current.Number_of_patients = 0;
             current.Vacation = false;
             current.ID_Manager = 1;
