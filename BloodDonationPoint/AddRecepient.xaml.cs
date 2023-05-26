@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BloodDonationPoint.DataBase;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -57,8 +59,7 @@ namespace BloodDonationPoint
 
         private void TbPhoneNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex input = new Regex(@"[(^\+\d{1,2})?((\(\d{3}\))|(\-?\d{3}\-)|(\d{3}))((\d{3}\-\d{4})|(\d{3}\-\d\d\  
--\d\d)|(\d{7})|(\d{3}\-\d\-\d{3}))]");
+            Regex input = new Regex(@"[[0-9\+]");
             Match match = input.Match(e.Text);
             if (!match.Success)
             {
@@ -66,29 +67,119 @@ namespace BloodDonationPoint
             }
         }
 
-        private void tbEmail_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-
-        }
-
         private void tbBloodType_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[[1-4]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbRH_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[[0-1]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            AvtorizationWindow.bd.Patients.Load();
+            Patients current = new Patients();
+            if (tbName.Text != "")
+            {
+                current.Name = tbName.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали имя");
+            }
+            if (tbSurname.Text != "")
+            {
+                current.Surname = tbSurname.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали фамилию");
+            }
+            if (tbFatherhood.Text != "")
+            {
+                current.Fatherhood = tbFatherhood.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали отчество");
+            }
+            if (TbPhoneNumber.Text != "")
+            {
+                current.PhoneNumber = long.Parse(TbPhoneNumber.Text);
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали номер телефона");
+            }
+            if (tbEmail.Text != "")
+            {
+                current.Email = tbEmail.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали почту");
+            }
+            if (cbAntigenGipB.IsChecked == true && cbAntigenGipC.IsChecked == true && cbAntitelBIC.IsChecked == true && cbAntitelGipC.IsChecked == true &&
+                cbAtigenBIC.IsChecked == true && cbBloodType.IsChecked == true && cbSifilic.IsChecked == true)
+            {
+                current.HepatitisBVirusAntigen = true;
+                current.BloodType = true;
+                current.HepatitisCVirusAntigen = true;
+                current.HepatitisCVirusAntibodies = true;
+                current.HIVAntigen = true;
+                current.HIVAntibodies = true;
+                current.Syphilis = true;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Обследования пройдены не все!");
+            }
+            if (tbDoctor.Text != "")
+            {
+                current.ID_Doctors = int.Parse(tbDoctor.Text);
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали индификатор врача");
+            }
+            if (tbRH.Text != "")
+            {
+                current.RH = tbRH.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали резус фактор");
+            }
+            if (tbBloodType.Text != "")
+            {
+                current.Blood = tbBloodType.Text;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы не указали группу крови");
+            }
 
+            AvtorizationWindow.bd.Patients.Add(current);
+            AvtorizationWindow.bd.SaveChanges();
+            AvtorizationWindow.Inf("Информация сохранена!");
+            this.Close();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

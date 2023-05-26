@@ -49,7 +49,7 @@
                        Foreground="White" HorizontalAlignment="Left" Margin="10"
                        FontSize="18" FontWeight="Bold"/>
             <TextBox x:Name="TbPhoneNumber" Width="175" Height="35" PreviewTextInput="TbPhoneNumber_PreviewTextInput"
-                 Style="{StaticResource TB}" MaxLength="10"/>
+                 Style="{StaticResource TB}" MaxLength="11"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4">
             <TextBlock Text="Почта" Width="100" Height="35" 

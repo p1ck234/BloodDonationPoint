@@ -14,7 +14,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <DataGrid Name="dtgRecepient" AutoGenerateColumns="False"
-                  FontFamily="Tahoma" FontSize="24" IsReadOnly="True" Grid.Row="0">
+                  FontFamily="Tahoma" FontSize="24" IsReadOnly="True" Grid.Row="0" SourceUpdated="dtgRecepient_SourceUpdated">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"/>
@@ -32,6 +32,8 @@
                         Height="35" Width="100" Content="Добавить" Click="btnAdd_Click" Margin="10"/>
             <Button Name="btnDel" Style="{StaticResource btn}"
                         Height="35" Width="100" Content="Удалить" Click="btnDel_Click" Margin="10"/>
+            <Button Name="btnReload" Style="{StaticResource btn}"
+                        Height="35" Width="100" Content="Обновить" Click="btnReload_Click" Margin="10"/>
         </StackPanel>
     </Grid>
 </Page>

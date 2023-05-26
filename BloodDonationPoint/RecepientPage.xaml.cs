@@ -67,5 +67,17 @@ namespace BloodDonationPoint
         {
 
         }
+
+        private void dtgRecepient_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            AvtorizationWindow.bd.Patients.Load();
+            dtgRecepient.ItemsSource = AvtorizationWindow.bd.Patients.Local.OrderBy(x => x.ID);
+        }
+
+        private void btnReload_Click(object sender, RoutedEventArgs e)
+        {
+            AvtorizationWindow.bd.Patients.Load();
+            dtgRecepient.ItemsSource = AvtorizationWindow.bd.Patients.Local.OrderBy(x => x.ID);
+        }
     }
 }
