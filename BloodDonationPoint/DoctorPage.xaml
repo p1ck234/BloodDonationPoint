@@ -21,6 +21,9 @@
                 <Button x:Name="btnDel" Style="{StaticResource btn}"
                 Width="100" Height="35" Margin="10" Content="Удалить"
                 FontSize="14" Click="btnDel_Click"/>
+                <Button x:Name="btnRel" Style="{StaticResource btn}"
+                Width="100" Height="35" Margin="10" Content="Обновить"
+                FontSize="14" Click="btnRel_Click"/>
             </StackPanel>
         </WrapPanel>
         <ListView Name="lvDoctor" Grid.Row="0"

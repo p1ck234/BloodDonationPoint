@@ -65,7 +65,20 @@ namespace BloodDonationPoint
 
         private void btnSelect_Click(object sender, RoutedEventArgs e)
         {
-
+            AvtorizationWindow.bd.Patients.Load();
+            AvtorizationWindow.bd.BloodStorage.Load();
+            Patients selectCurrent = new Patients();
+            BloodStorage current = new BloodStorage();
+            if (dtgRecepient.SelectedItem != null)
+            {
+                selectCurrent = (Patients)dtgRecepient.SelectedItem;
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
+            }
+            current.ID_Donor = selectCurrent.ID;
+            
         }
 
         private void dtgRecepient_SourceUpdated(object sender, DataTransferEventArgs e)

@@ -62,5 +62,11 @@ namespace BloodDonationPoint
                 AvtorizationWindow.Exp("Вы ничего не выбрали");
             }
         }
+
+        private void btnRel_Click(object sender, RoutedEventArgs e)
+        {
+            AvtorizationWindow.bd.Doctors.Load();
+            lvDoctor.ItemsSource = AvtorizationWindow.bd.Doctors.Local;
+        }
     }
 }
