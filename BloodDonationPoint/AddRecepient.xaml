@@ -49,49 +49,56 @@
                        Foreground="White" HorizontalAlignment="Left" Margin="10"
                        FontSize="18" FontWeight="Bold"/>
             <TextBox x:Name="TbPhoneNumber" Width="175" Height="35" PreviewTextInput="TbPhoneNumber_PreviewTextInput"
-                 Style="{StaticResource TB}" />
+                 Style="{StaticResource TB}" MaxLength="10"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4">
             <TextBlock Text="Почта" Width="100" Height="35" 
                        Foreground="White" HorizontalAlignment="Left" Margin="10"
                        FontSize="18" FontWeight="Bold"/>
-            <TextBox x:Name="tbEmail" Width="175" Height="35" PreviewTextInput="tbEmail_PreviewTextInput"
+            <TextBox x:Name="tbEmail" Width="175" Height="35"
                  Style="{StaticResource TB}" />
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Row="5">
             <CheckBox Content="Тест на группу крови" 
-                      Foreground="White" Margin="5" IsChecked="True"/>
+                      Foreground="White" Margin="5" IsChecked="True"
+                      Name="cbBloodType"/>
             <CheckBox Content="Тест на поверхностный антигент вируса гепатит B" 
-                      Foreground="White" Margin="5" IsChecked="True"/>
+                      Foreground="White" Margin="5" IsChecked="True"
+                      Name="cbAntigenGipB"/>
             <CheckBox Content="Тест на антиген вируса гепатита C" 
-                      Foreground="White" Margin="5" IsChecked="True"/>
+                      Foreground="White" Margin="5" IsChecked="True"
+                      Name="cbAntigenGipC"/>
             <CheckBox Content="Тест на антитела вируса гепатита C" 
-                      Foreground="White" Margin="5" IsChecked="True"/>
+                      Foreground="White" Margin="5" IsChecked="True"
+                      Name="cbAntitelGipC"/>
             <CheckBox Content="Тест на антиген ВИЧ" 
-                      Foreground="White" Margin="5" IsChecked="True"/>
+                      Foreground="White" Margin="5" IsChecked="True"
+                      Name="cbAtigenBIC"/>
             <CheckBox Content="Тест на антитела ВИЧ" 
-                      Foreground="White" Margin="5" IsChecked="True"/>
+                      Foreground="White" Margin="5" IsChecked="True"
+                      Name="cbAntitelBIC"/>
             <CheckBox Content="Тест на наличие возбудителя сифилиса" 
-                      Foreground="White" Margin="5" IsChecked="True"/>
+                      Foreground="White" Margin="5" IsChecked="True"
+                      Name="cbSifilic"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="6">
             <TextBlock Text="ID Доктор" Width="100" Height="35" 
                        Foreground="White" HorizontalAlignment="Left" Margin="10"
                        FontSize="18" FontWeight="Bold"/>
             <TextBox x:Name="tbDoctor" Width="175" Height="35" PreviewTextInput="tbBloodType_PreviewTextInput"
-                 Style="{StaticResource TB}" />
+                 Style="{StaticResource TB}" MaxLength="3"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="7">
             <TextBlock Text="Группа крови" Width="130" Height="35" 
                        Foreground="White" HorizontalAlignment="Left" Margin="10"
                        FontSize="18" FontWeight="Bold"/>
             <TextBox x:Name="tbBloodType" Width="50" Height="35" PreviewTextInput="tbBloodType_PreviewTextInput"
-                 Style="{StaticResource TB}" />
+                 Style="{StaticResource TB}" MaxLength="1"/>
             <TextBlock Text="Рузус" Width="50" Height="35" 
                        Foreground="White" HorizontalAlignment="Left" Margin="10"
                        FontSize="18" FontWeight="Bold"/>
             <TextBox x:Name="tbRH" Width="50" Height="35" PreviewTextInput="tbRH_PreviewTextInput"
-                 Style="{StaticResource TB}" />
+                 Style="{StaticResource TB}" MaxLength="1"/>
         </StackPanel>
         <Grid Grid.Row="8">
             <Border BorderBrush ="Black" BorderThickness="1" />

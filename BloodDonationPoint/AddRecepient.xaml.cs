@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,22 +27,43 @@ namespace BloodDonationPoint
 
         private void tbName_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[а-яА-Я]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbSurname_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[а-яА-Я]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbFatherhood_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[а-яА-Я]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void TbPhoneNumber_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            Regex input = new Regex(@"[(^\+\d{1,2})?((\(\d{3}\))|(\-?\d{3}\-)|(\d{3}))((\d{3}\-\d{4})|(\d{3}\-\d\d\  
+-\d\d)|(\d{7})|(\d{3}\-\d\-\d{3}))]");
+            Match match = input.Match(e.Text);
+            if (!match.Success)
+            {
+                e.Handled = true;
+            }
         }
 
         private void tbEmail_PreviewTextInput(object sender, TextCompositionEventArgs e)
