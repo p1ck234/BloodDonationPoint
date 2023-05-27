@@ -70,6 +70,9 @@
     <Compile Include="AddRecepient.xaml.cs">
       <DependentUpon>AddRecepient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StorageBlood.xaml.cs">
+      <DependentUpon>StorageBlood.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecepientPage.xaml.cs">
       <DependentUpon>RecepientPage.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <DependentUpon>AvtorizationWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StorageBlood.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DoctorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

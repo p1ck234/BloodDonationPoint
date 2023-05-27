@@ -73,7 +73,7 @@ namespace BloodDonationPoint
 
         private void btnBaseBlood_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new StorageBlood());
         }
     }
 }
