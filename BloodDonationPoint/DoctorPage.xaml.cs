@@ -67,6 +67,7 @@ namespace BloodDonationPoint
         {
             AvtorizationWindow.bd.Doctors.Load();
             lvDoctor.ItemsSource = AvtorizationWindow.bd.Doctors.Local;
+            AvtorizationWindow.Inf("Страница была обновлена!");
         }
     }
 }

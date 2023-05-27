@@ -91,6 +91,7 @@ namespace BloodDonationPoint
         {
             AvtorizationWindow.bd.Patients.Load();
             dtgRecepient.ItemsSource = AvtorizationWindow.bd.Patients.Local.OrderBy(x => x.ID);
+            AvtorizationWindow.Inf("Страница была обновлена!");
         }
     }
 }
