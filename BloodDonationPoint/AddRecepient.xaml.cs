@@ -89,11 +89,13 @@ namespace BloodDonationPoint
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            int counter = 0;
             AvtorizationWindow.bd.Patients.Load();
             Patients current = new Patients();
             if (tbName.Text != "")
             {
                 current.Name = tbName.Text;
+                counter++;
             }
             else
             {
@@ -102,6 +104,7 @@ namespace BloodDonationPoint
             if (tbSurname.Text != "")
             {
                 current.Surname = tbSurname.Text;
+                counter++;
             }
             else
             {
@@ -110,6 +113,7 @@ namespace BloodDonationPoint
             if (tbFatherhood.Text != "")
             {
                 current.Fatherhood = tbFatherhood.Text;
+                counter++;
             }
             else
             {
@@ -118,6 +122,7 @@ namespace BloodDonationPoint
             if (TbPhoneNumber.Text != "")
             {
                 current.PhoneNumber = long.Parse(TbPhoneNumber.Text);
+                counter++;
             }
             else
             {
@@ -126,6 +131,7 @@ namespace BloodDonationPoint
             if (tbEmail.Text != "")
             {
                 current.Email = tbEmail.Text;
+                counter++;
             }
             else
             {
@@ -141,6 +147,7 @@ namespace BloodDonationPoint
                 current.HIVAntigen = true;
                 current.HIVAntibodies = true;
                 current.Syphilis = true;
+                counter++;
             }
             else
             {
@@ -149,6 +156,7 @@ namespace BloodDonationPoint
             if (tbDoctor.Text != "")
             {
                 current.ID_Doctors = int.Parse(tbDoctor.Text);
+                counter++;
             }
             else
             {
@@ -157,6 +165,7 @@ namespace BloodDonationPoint
             if (tbRH.Text != "")
             {
                 current.RH = tbRH.Text;
+                counter++;
             }
             else
             {
@@ -165,16 +174,27 @@ namespace BloodDonationPoint
             if (tbBloodType.Text != "")
             {
                 current.Blood = tbBloodType.Text;
+                counter++;
             }
             else
             {
                 AvtorizationWindow.Exp("Вы не указали группу крови");
             }
 
-            AvtorizationWindow.bd.Patients.Add(current);
-            AvtorizationWindow.bd.SaveChanges();
-            AvtorizationWindow.Inf("Информация сохранена!");
-            this.Close();
+            if (counter == 9)
+            {
+                try
+                {
+                    AvtorizationWindow.bd.Patients.Add(current);
+                    AvtorizationWindow.bd.SaveChanges();
+                    AvtorizationWindow.Inf("Информация сохранена!");
+                    this.Close();
+                }
+                catch
+                {
+                    AvtorizationWindow.Exp("Что-то пошло не так!");
+                }
+            }
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

@@ -99,6 +99,8 @@ namespace BloodDonationPoint
             {
                 AvtorizationWindow.bd.BloodStorage.Add(current);
                 AvtorizationWindow.bd.SaveChanges();
+                AvtorizationWindow.Inf("Информация сохранена!");
+                this.Close();
             }
             catch
             {

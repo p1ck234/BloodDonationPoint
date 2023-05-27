@@ -30,11 +30,13 @@ namespace BloodDonationPoint
        
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            int counter = 0;
             AvtorizationWindow.bd.Doctors.Load();
             Doctors current = new Doctors();
             if (tbSurname.Text != "")
             {
                 current.Surname = tbSurname.Text;
+                counter++;
             }
             else
             {
@@ -43,6 +45,7 @@ namespace BloodDonationPoint
             if (tbName.Text != "")
             {
                 current.Name = tbName.Text;
+                counter++;
             }
             else
             {
@@ -51,6 +54,7 @@ namespace BloodDonationPoint
             if (tbFatherhood.Text != "")
             {
                 current.Fatherhood = tbFatherhood.Text;
+                counter++;
             }
             else
             {
@@ -59,6 +63,7 @@ namespace BloodDonationPoint
             if (tbStage.Text != "")
             {
                 current.Stage = int.Parse(tbStage.Text);
+                counter++;
             }
             else
             {
@@ -67,6 +72,7 @@ namespace BloodDonationPoint
             if (tbMax.Text != "")
             {
                 current.Maximum_number_of_patients = int.Parse(tbMax.Text);
+                counter++;
             }
             else
             {
@@ -76,16 +82,19 @@ namespace BloodDonationPoint
             current.Vacation = false;
             current.ID_Manager = 1;
 
-            try
+            if (counter == 5)
             {
-                AvtorizationWindow.bd.Doctors.Add(current);
-                AvtorizationWindow.bd.SaveChanges();
-                AvtorizationWindow.Inf("Информация сохранена!");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                AvtorizationWindow.Exp(ex.Message);
+                try
+                {
+                    AvtorizationWindow.bd.Doctors.Add(current);
+                    AvtorizationWindow.bd.SaveChanges();
+                    AvtorizationWindow.Inf("Информация сохранена!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    AvtorizationWindow.Exp(ex.Message);
+                }
             }
         }
 
