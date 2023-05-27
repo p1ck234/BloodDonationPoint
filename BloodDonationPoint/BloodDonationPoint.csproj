@@ -73,6 +73,9 @@
     <Compile Include="RecepientPage.xaml.cs">
       <DependentUpon>RecepientPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TakeBlood.xaml.cs">
+      <DependentUpon>TakeBlood.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddRecepient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RecepientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TakeBlood.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
