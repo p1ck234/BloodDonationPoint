@@ -84,6 +84,9 @@
         </StackPanel>
         <Grid Grid.Row="1">
             <StackPanel>
+                <Button Name="btnMainPage" Style="{StaticResource btn}"
+                        Height="40" Width="150" FontSize="18" Content="Врачи"
+                        Click="btnMainPage_Click" Margin="0,30,0,0"/>
                 <Button Name="btnDoctor" Style="{StaticResource btn}"
                         Height="40" Width="150" FontSize="18" Content="Врачи"
                         Click="btnDoctor_Click" Margin="0,30,0,0"/>

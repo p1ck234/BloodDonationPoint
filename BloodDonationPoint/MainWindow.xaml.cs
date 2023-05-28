@@ -75,5 +75,10 @@ namespace BloodDonationPoint
         {
             Manager.MainFrame.Navigate(new StorageBlood());
         }
+
+        private void btnMainPage_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new MainPage());
+        }
     }
 }
