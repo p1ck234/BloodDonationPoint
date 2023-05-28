@@ -39,10 +39,10 @@ namespace BloodDonationPoint
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
             AvtorizationWindow.bd.Doctors.Load();
-            selectEntites = (Doctors)lvDoctor.SelectedItem;
-            if (selectEntites != null)
+            if (lvDoctor.SelectedItem != null)
             {
-               if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                selectEntites = (Doctors)lvDoctor.SelectedItem;
+                if (MessageBox.Show("Вы действительно хотите удалить этот элемент из базы данных?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     try
                     {
@@ -51,7 +51,7 @@ namespace BloodDonationPoint
                         lvDoctor.ItemsSource = AvtorizationWindow.bd.Doctors.Local.OrderBy(x => x.ID);
                         AvtorizationWindow.Inf("Элемент удален");
                     }
-                    catch(Exception ex) 
+                    catch (Exception ex)
                     {
                         AvtorizationWindow.Exp(ex.Message);
                     }
@@ -68,6 +68,20 @@ namespace BloodDonationPoint
             AvtorizationWindow.bd.Doctors.Load();
             lvDoctor.ItemsSource = AvtorizationWindow.bd.Doctors.Local;
             AvtorizationWindow.Inf("Страница была обновлена!");
+        }
+
+        private void btnRed_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvDoctor.SelectedItem != null)
+            {
+                selectEntites = (Doctors)lvDoctor.SelectedItem;
+                RedDoctorWindow window = new RedDoctorWindow();
+                window.Show();
+            }
+            else
+            {
+                AvtorizationWindow.Exp("Вы ничего не выбрали!");
+            }
         }
     }
 }

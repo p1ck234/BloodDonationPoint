@@ -21,6 +21,9 @@
                 <Button x:Name="btnDel" Style="{StaticResource btn}"
                 Width="100" Height="35" Margin="10" Content="Удалить"
                 FontSize="14" Click="btnDel_Click"/>
+                <Button x:Name="btnRed" Style="{StaticResource btn}"
+                Width="100" Height="35" Margin="10" Content="Редактировать"
+                FontSize="14" Click="btnRed_Click"/>
                 <Button x:Name="btnRel" Style="{StaticResource btn}"
                 Width="100" Height="35" Margin="10" Content="Обновить"
                 FontSize="14" Click="btnRel_Click"/>
@@ -84,6 +87,8 @@
                                    FontSize="14" HorizontalAlignment="Left"/>
                         <TextBlock Text="{Binding Maximum_number_of_patients}" Grid.Row="3" 
                                    FontSize="14" HorizontalAlignment="Left" Margin="13,0,0,0"/>
+                        <TextBlock Text="{Binding ID, StringFormat={}{0}}" Grid.Row="3" 
+                                   FontSize="14" HorizontalAlignment="Right"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

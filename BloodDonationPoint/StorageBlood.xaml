@@ -30,7 +30,7 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
                 <DataGridTextColumn Header="ID Донора" Binding="{Binding ID_Donor}"/>
                 <DataGridTextColumn Header="Компонент" Binding="{Binding Component}"/>
-                <DataGridTextColumn Header="Дата сбора" Binding="{Binding Date_Sbora}"/>
+                <DataGridTextColumn Header="Дата сбора" Binding="{Binding Date_Sbora,StringFormat=dd/MM/yyyy}"/>
                 <DataGridTextColumn Header="Группа крови" Binding="{Binding Group}"/>
                 <DataGridTextColumn Header="Резус фактор" Binding="{Binding Rh}"/>
             </DataGrid.Columns>
